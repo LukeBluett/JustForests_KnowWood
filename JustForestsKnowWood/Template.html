@@ -3,51 +3,212 @@
 	<head>
 		<title>Template</title>
 		<link rel="stylesheet" type="text/css" href="CSS/template.css">
-		<link rel="stylesheet" type="text/css" href="CSS/Stylesheet.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
 		<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+		<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+
+
+		<script type ="text/javascript" src="jquery-1.8.3.js"></script>
+		<script src="JS/tempTropJS.js"></script>
+
+		<script type="text/javascript" src="JS/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="JS/jssor.slider.mini.js"></script>
+
+	<script>
+	jQuery(document).ready(function ($) {
+            
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:1200,$Opacity:2}
+            ];
+            
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+            
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+            
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+      
+
+	</script>
+
 	</head>
 	<body>
 
-		<div class="header">
-			<nav class="navbar navbar-default">
-	        <div class="container-fluid">
-	          <div class="navbar-header">
-	            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	              <span class="sr-only">Toggle navigation</span>
-	              <span class="icon-bar"></span>
-	              <span class="icon-bar"></span>
-	              <span class="icon-bar"></span>
-	            </button>
-	            <a class="navbar-brand" href="#"><img src="../../Images/test.JPG"  style="width:40px;height:40px;"></a>
-	          </div>
-	          <div id="navbar" class="navbar-collapse collapse">
-	            <ul class="nav navbar-nav">
-	              <li class="active"><a href="#">Home</a></li>
-	              <li><a href="#">Regions</a></li>
-	              <li><a href="#">Wood Samples</a></li>
-	              <li><a href="#">About</a></li>
-	              <li><a href="#">Contact</a></li>
+		
+			<nav class="navbar navbar-default navbar-fixed-top">
+	        	<div class="container-fluid">
+	          		<div class="navbar-header">
+	            		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	              			<span class="sr-only">Toggle navigation</span>
+	              			<span class="icon-bar"></span>
+	              			<span class="icon-bar"></span>
+	              			<span class="icon-bar"></span>
+	            		</button>
+	            		<a class="navbar-brand" href="#"><img src="../../Images/test.JPG"  style="width:40px;height:40px;"></a>
+	          		</div>
+	          		<div id="navbar" class="navbar-collapse collapse">
+	            		<ul class="nav navbar-nav">
+			              <li class="active"><a href="#slideshow">Home</a></li>
+			              <li><a href="#regions">Regions</a></li>
+			              <li><a href="#woodSamples">Wood Samples</a></li>
+			              <li><a href="#">About</a></li>
+			              <li><a href="#">Contact</a></li>
+	            		</ul>
+	            	</div><!--/.nav-collapse -->
+	            </div><!--/.container-fluid -->
+	      	</nav>
+		
 
-	            </ul>
 
-	          </div><!--/.nav-collapse -->
-	        </div><!--/.container-fluid -->
-	      </nav>
+		<div id="slideshow" class="slideshow">
+		 <!-- Slide Show Start -->
+
+          <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 600px; height: 300px; overflow: hidden; visibility: hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+            <div style="position:absolute;display:block;background:url('Images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 600px; height: 300px; overflow: hidden;">
+            <div data-p="112.50" style="display: none;">
+                <img data-u="image" src="Images/10.png" />
+            </div>
+            <div data-p="112.50" style="display: none;">
+                <img data-u="image" src="Images/04.jpg" />
+            </div>
+            <div data-p="112.50" style="display: none;">
+                <img data-u="image" src="Images/05.jpg" />
+            </div>
+            <div data-p="112.50" style="display: none;">
+                <img data-u="image" src="Images/09.jpg" />
+            </div>
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+            <!-- bullet navigator item prototype -->
+            <div data-u="prototype" style="width:16px;height:16px;"></div>
+        </div>
+        <!-- Arrow Navigator -->
+        <span data-u="arrowleft" class="jssora12l" style="top:0px;left:0px;width:30px;height:46px;" data-autocenter="2"></span>
+        <span data-u="arrowright" class="jssora12r" style="top:0px;right:0px;width:30px;height:46px;" data-autocenter="2"></span>
+        <a href="http://www.jssor.com" style="display:none">Slideshow Maker</a>
+    </div>
+
+
+
+      <!--Slide Show Finished -->
 		</div>
 
 
-		<div class="slideshow">
+		<div id="regions" class="regions">
+
+		<div id="myCarousel" class="carousel slide" data-interval="false"> 
+  <!-- Indicators -->
+  <div class="carousel-inner">
+    <div class="item active"> <img src="Images/Temperate.png" style="width:100%; height:34%;" alt="First slide">
+    </div>
+    <div class="item"> <img src="Images/Temp.jpg" style="width:100%; height:34%;" data-src="" alt="Second slide">
+      <div class="container">
+      <div class="carousel-caption">
+      <h1>Temperate</h1>
+          <p>This is a temperate forest in the autumn</p>
+      </div>
+    </div>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> </div>
+
+
+  <div id="myCarousel1" class="carousel slide" data-interval="false"> 
+  <!-- Indicators -->
+  <div class="carousel-inner">
+    <div class="item active"> <img src="Images/Tropical.png" style="width:100%; height:33%;" alt="First slide">
+    </div>
+    <div class="item"><img src="Images/trop.jpg" style="width:100%; height:33%;" data-src="" alt="Second slide">
+      <div class="container">
+        <div class="carousel-caption">
+      <h1>Tropical</h1>
+          <p>This is a tropical forest</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel1" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myCarousel1" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> </div>
+
+
+ 
+  <div id="myCarousel2" class="carousel slide" data-interval="false"> 
+  <!-- Indicators -->
+  <div class="carousel-inner">
+    <div class="item active"> <img src="Images/Temperate1.png" style="width:100%; height:30%;" alt="First slide">
+    </div>  
+    <div class="item"><img src="Images/Temp.jpg" style="width:100%; height:30%;" data-src="" alt="Second slide">
+      <div class="container">
+        <div class="carousel-caption">
+      <h1>Temperate</h1>
+          <p>This is a temperate forest in the autumn</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel2" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myCarousel2" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> </div>
+
+
+  <script type="text/javascript">
+ $.fn.carousel.defaults = {
+    interval: false
+  , pause: 'hover'
+  }
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  </script>
+
 
 		</div>
 
 
-		<div class="regions">
-
-		</div>
-
-
-		<div class="woodSamples-navbar">
+		<div id="woodSamples" class="woodSamples-navbar">
 			<div class="container-fluid">
         		<div id="header" class="header-color">
         			<div class="centre">
@@ -64,129 +225,244 @@
 
 
 		<div class="woodSamples">
-				<div id="test" style="display: none;">
-					<div class="container" >
-						<div class="container2" >
-
-							<div class="">
-								<div class="flip" >			
-									<div class="front2">
-										<img src="images/Ash.jpg" />
-										<p>  </p>
-									</div>
-									<div class="back2">Back 1</div>
-								</div>
-
-			<div class="flip" >
-
-				<div class="front2">Front 2</div>
-					<div class="back2">Back 2</div>
-					</div>
-
-					<div class="flip" >
-
-						<div class="front2">Front 3</div>
-						<div class="back2">Back 3</div>
-					</div>
-
-					<div class="flip" >
-
-						<div class="front2">Front 4</div>
-						<div class="back2">Back 4</div>
-					</div>
-
-					<div class="flip" >
-
-						<div class="front2">Front 5</div>
-						<div class="back2">Back 5</div>
-					</div>
-
-					<div class="flip" >
-
-						<div class="front2">Front 6</div>
-						<div class="back2">Back 6</div>
-					</div>
-
-					<div class="flip" >
-
-						<div class="front2">Front 7</div>
-						<div class="back2">Back 7</div>
-					</div>
-
-					<div class="flip" >
-
-						<div class="front2">Front 8</div>
-						<div class="back2">Back 8</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="test2" style="display: block;">
+				<div id="test" class="test" style="display: none;">
 
 			<div class="container" >
 				<div class="container2" >
 
+					<div class="col-md-6 col-sm-6">
 					<div class="flip" >			
-						<div class="front">
-							<img src="images/Ash.jpg" />
+						<div id="front" class="front">
+							<img src="Images/download.jpg" />
 							<p>  </p>
 						</div>
-						<div class="back">Back 1</div>
+						<div id="back" class="back">
+							<img src="Images/download2.jpg" />
+						</div>
+					</div>
 					</div>
 
-					<div class="flip" >
-				
-						<div class="front">Front 2</div>
-						<div class="back">Back 2</div>
+					<div class="col-md-6 col-sm-6">
+					<div class="flip" >			
+						<div class="front">
+							<img src="Images/download.jpg" />
+							<p>  </p>
+						</div>
+						<div class="back">
+							<img src="Images/download2.jpg" />
+						</div>
+					</div>
 					</div>
 
-					<div class="flip" >
-				
-						<div class="front">Front 3</div>
-						<div class="back">Back 3</div>
+					<div class="col-md-6 col-sm-6">
+					<div class="flip" >			
+						<div class="front">
+							<img src="Images/download.jpg" />
+							<p>  </p>
+						</div>
+						<div class="back">
+							<img src="Images/download2.jpg" />
+						</div>
+					</div>
 					</div>
 
-					<div class="flip" >
-				
-						<div class="front">Front 4</div>
-						<div class="back">Back 4</div>
-					</div>	
-
-					<div class="flip" >
-				
-						<div class="front">Front 5</div>
-						<div class="back">Back 5</div>
+					<div class="col-md-6 col-sm-6">
+					<div class="flip" >			
+						<div class="front">
+							<img src="Images/download.jpg" />
+							<p>  </p>
+						</div>
+						<div class="back">
+							<img src="Images/download2.jpg" />
+						</div>
 					</div>
-					<div class="flip" >
-				
-						<div class="front">Front 6</div>
-						<div class="back">Back 6</div>
 					</div>
 
-					<div class="flip" >
-				
-						<div class="front">Front 7</div>
-						<div class="back">Back 7</div>
+					<div class="col-md-6 col-sm-6">
+					<div class="flip" >			
+						<div class="front">
+							<img src="Images/download.jpg" />
+							<p>  </p>
+						</div>
+						<div class="back">
+							<img src="Images/download2.jpg" />
+						</div>
+					</div>
 					</div>
 
-					<div class="flip" >
-				
-						<div class="front">Front 8</div>
-						<div class="back">Back 8</div>
+					<div class="col-md-6 col-sm-6">
+					<div class="flip" >			
+						<div class="front">
+							<img src="Images/download.jpg" />
+							<p>  </p>
+						</div>
+						<div class="back">
+							<img src="Images/download2.jpg" />
+						</div>
+					</div>
+					</div>
+
+					<div class="col-md-6 col-sm-6">
+					<div class="flip" >			
+						<div class="front">
+							<img src="Images/download.jpg" />
+							<p> In botany, a tree is a perennial plant with an elongated stem, or trunk, supporting branches and leaves in most species. In some usages, the definition of a tree may be narrower, including only woody plants with secondary growth, plants that are usable as lumber or plants above a specified height. Trees are not a taxonomic group but include a variety of plant species that have independently evolved a woody trunk and branches as a way to tower above other plants to compete for sunlight. In looser senses, the taller palms, the tree ferns,bananas and bamboos are also trees. Trees tend to be long-lived, some reaching several thousand years old. The tallest known tree, acoast </p>
+						</div>
+						<div class="back">
+							<img src="Images/download2.jpg" />
+						</div>
+					</div>
+					</div>
+
+					<div class="col-md-6 col-sm-6">
+					<div class="flip" >			
+						<div class="front">
+							<img src="Images/download.jpg" />
+							<p>  </p>
+						</div>
+						<div class="back">
+							<img src="Images/download2.jpg" />
+						</div>
+					</div>
 					</div>
 				</div>
 			</div> 
 		</div>
+
+		<div id="test2"class="test" style="display: block;">
+
+			<div class="container" >
+				<div class="container2" >
+
+					<div class="col-md-6 col-sm-6">
+					<div class="flip" >			
+						<div id="front2" class="front">
+							<img src="Images/download1.jpg" />
+							<p>  </p>
+						</div>
+						<div id="back2" class="back">
+							<img src="Images/download3.jpg" />
+						</div>
+					</div>
+					</div>
+
+					<div class="col-md-6 col-sm-6">
+					<div class="flip" >			
+						<div class="front">
+							<img src="Images/download1.jpg" />
+							<p>  </p>
+						</div>
+						<div class="back">
+							<img src="Images/download3.jpg" />
+						</div>
+					</div>
+					</div>
+
+					<div class="col-md-6 col-sm-6">
+					<div class="flip" >			
+						<div class="front">
+							<img src="Images/download1.jpg" />
+							<p>  </p>
+						</div>
+						<div class="back">
+							<img src="Images/download3.jpg" />
+						</div>
+					</div>
+					</div>
+
+					<div class="col-md-6 col-sm-6">
+					<div class="flip" >			
+						<div class="front">
+							<img src="Images/download1.jpg" />
+							<p>  </p>
+						</div>
+						<div class="back">
+							<img src="Images/download3.jpg" />
+						</div>
+					</div>
+					</div>
+
+					<div class="col-md-6 col-sm-6">
+					<div class="flip" >			
+						<div class="front">
+							<img src="Images/download1.jpg" />
+							<p>  </p>
+						</div>
+						<div class="back">
+							<img src="Images/download3.jpg" />
+						</div>
+					</div>
+					</div>
+
+					<div class="col-md-6 col-sm-6">
+					<div class="flip" >			
+						<div class="front">
+							<img src="Images/download1.jpg" />
+							<p>  </p>
+						</div>
+						<div class="back">
+							<img src="Images/download3.jpg" />
+						</div>
+					</div>
+					</div>
+
+					<div class="col-md-6 col-sm-6">
+					<div class="flip" >			
+						<div class="front">
+							<img src="Images/download1.jpg" />
+							<p>  </p>
+						</div>
+						<div class="back">
+							<img src="Images/download3.jpg" />
+						</div>
+					</div>
+					</div>
+
+					<div class="col-md-6 col-sm-6">
+					<div class="flip" >			
+						<div class="front">
+							<img src="Images/download1.jpg" />
+							<p>  </p>
+						</div>
+						<div class="back">
+							<img src="Images/download3.jpg" />
+						</div>
+					</div>
+					</div>
+				</div>
+		</div>
 		</div>
 
 
 
-		<div class="footer">
 
-		</div>
+		<footer class="footer">
+      <div class="container">
+        <div class="footer"></div>
+      </div>
+    </footer>
+		<script>
 
+			function myFunction(x,y) {
+  				if (y.checked) 
+  				{
+  					document.getElementById('header').style.backgroundColor = 'cyan';
+  					document.getElementById('front2').style.backgroundColor = '#f0f0f0';
+  					document.getElementById('back2').style.backgroundColor = 'red';
+	      			document.getElementById('test').style.display = "none";
+	      			document.getElementById('test2').style.display = "block";
+	  			} 
+	  			else 
+	  			{
+	  				document.getElementById('header').style.backgroundColor = 'orange';
+	  				document.getElementById('front').style.backgroundColor = '#f0f0f0';
+	  				document.getElementById('back').style.backgroundColor = 'green';
+	      			document.getElementById('test').style.display = "block";
+	      			document.getElementById('test2').style.display = "none";
+				}
+			}
 
+		</script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>

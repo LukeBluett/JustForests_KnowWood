@@ -1,3 +1,73 @@
+﻿Luke
+
+
+Search Drive
+
+Drive
+.
+Folder Path
+TeamCODE
+Code
+Flip cards animation
+Draft 3
+Card Flip Animation
+NEW 
+Folders and views
+My Drive
+Shared with me
+Google Photos
+Recent
+Starred
+Trash
+1 GB of 15 GB used
+Upgrade storage
+Name
+Owner
+Last modified
+images
+Alan Moriarty
+10:28 am
+
+Stylesheet.css
+Alan Moriarty
+10:29 am
+
+CardFlip.html
+Alan Moriarty
+10:29 am
+Style Sheet
+Stylesheet.css
+Details
+Activity
+Stylesheet.css
+Sharing Info
+A
+
+K
+
+P
+General Info
+Type
+Style Sheet
+Size
+2 KB (1,637 bytes)
+Storage used
+0 bytesOwned by someone else
+Location
+Card Flip Animation
+Owner
+Alan Moriarty
+Modified
+10:29 am by Alan Moriarty
+Opened
+2:09 pm by me
+Created
+10:29 am
+Description
+Add a description
+Download permissions
+Viewers can download
+
 ﻿body{
 background: grey;
 }
@@ -35,11 +105,12 @@ border: 1px solid yellow;
 
 /* each card flip dimensions */
 .flip {
-width: 340px;
-height: 300px;
+width: 600px;
+height: 350px;
 margin: 10px;
 float: left;
 }
+
 
 /* front of each cards attributes */
 .flip > .front{
@@ -47,8 +118,8 @@ position: absolute;
 transform: perspective(600px) rotateY(0deg);
 -webkit-transform: perspective(600px) rotateY(0deg);
 background: yellow;
-width: 340px;
-height: 300px;
+width: 600px;
+height: 350px;
 border-radius: 7px;
 backface-visibility: hidden;
 transition: transform .5s linear 0s;
@@ -70,8 +141,8 @@ transform: perspective(600px) rotateY(180deg);
 -o-transform: perspective(600px) rotateY(180deg);
 -ms-transform: perspective(600px) rotateY(180deg);
 background: blue;
-width: 340px;
-height: 300px;
+width: 600px;
+height: 350px;
 border-radius: 7px;
 backface-visibility: hidden;
 transition: transform .5s linear 0s;
